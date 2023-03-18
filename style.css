@@ -13,25 +13,87 @@
     justify-content: center;
     align-items: center;
 }
+p{
+    font-size: 100%;
+}
 .sheet{
-    /* height: 500px; */
-    /* width: 1000px; */
+    padding: 10px;
+    background-color: purple;
+}
+.content{
+    height: auto; 
+    width: 1000px;
     background-color: red;
-    /* margin: 30px; */
-    min-width: 500px;
-    max-width: 1000px;
-    min-height: 500px;
-    max-height: 1000px;
-    position: absolute;
     display: flex;
+    flex-direction: column;
+    /* position: absolute; */
 }
-.sheet div{
-    /* height: 50px;
-    width: 300px; */
-    background-color: yellow;
 
-    position: relative;
-    display: inline-block;
-    max-width: 33%;
-    min-width: 150px;
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
 }
+
+.pic_container{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    flex: 1;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.pic_container .userimg{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    object-fit: fill;
+    background-color: green;
+    overflow: hidden;
+
+}
+.profileDetail{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 5;
+    padding-left: 50px;
+}
+
+.profileDetail div{
+    margin: 5px;
+}
+
+.pic_container img{
+    height:100px;
+}
+
+.profilesummery{
+    height: auto;
+    margin: 10px auto;
+    background-color: antiquewhite;
+    
+}
+.profilesummery p{
+    margin: 10px;
+}
+.heading p{
+    font-size: 20px;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        width: 100%;
+    }
+  }

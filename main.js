@@ -6,16 +6,16 @@ const context = canvas.getContext('2d');
 const currentFrame = index => (
     `https://mymintbox.s3.ap-south-1.amazonaws.com/${index.toString().padStart(6,'0')}.png`
 )
-window.onload = function(){ document.getElementById("loading").style.display = "none" };
 const frameCount = 77;
 const preloadImages = ()=> {
     for (let i = 1; i < frameCount; i++) {
         const img = new Image();
         img.src = currentFrame(i);
-        console.log(i)
+        console.log(i);
     }
 }
 preloadImages();
+window.onload = function(){ document.getElementById("loading").style.display = "none" };
 
 
 canvas.height = 1500;

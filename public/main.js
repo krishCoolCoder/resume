@@ -20,8 +20,8 @@ preloadImages();
 
 canvas.height = 1500;
 canvas.width = 1158;
-const img = new Image();
-img.src = currentFrame(1);
+// const img = new Image();
+// img.src = currentFrame(1);
 img.onload = function() {
     // context.drawImage(img,0,0);
     context.drawImage(img,(canvas.width-img.width)/2, (canvas.height-img.height)/2);

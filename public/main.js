@@ -2,8 +2,11 @@ const html = document.documentElement;
 const canvas = document.querySelector(".magic");
 const context = canvas.getContext('2d');
 
+// `../boxImages/${index.toString().padStart(6,'0')}.png`
+// https://mymintbox.s3.ap-south-1.amazonaws.com/000001.png
+
 const currentFrame = index => (
-    `../boxImages/${index.toString().padStart(6,'0')}.png`
+    `https://mymintbox.s3.ap-south-1.amazonaws.com/${index.toString().padStart(6,'0')}.png`
 )
 
 const frameCount = 77;

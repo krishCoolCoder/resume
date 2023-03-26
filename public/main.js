@@ -3,13 +3,20 @@ const canvas = document.querySelector(".magic");
 const context = canvas.getContext('2d');
 
 // `../boxImages/${index.toString().padStart(6,'0')}.png`
-// https://mymintbox.s3.ap-south-1.amazonaws.com/000001.png
-
 const currentFrame = index => (
     `https://mymintbox.s3.ap-south-1.amazonaws.com/${index.toString().padStart(6,'0')}.png`
 )
-
+window.onload = function(){ document.getElementById("loading").style.display = "none" };
 const frameCount = 77;
+const preloadImages = ()=> {
+    for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        console.log(i)
+    }
+}
+preloadImages();
+
 
 canvas.height = 1500;
 canvas.width = 1158;
@@ -33,11 +40,3 @@ window.addEventListener('scroll', () => {
     const frameIndex = Math.min(frameCount -  1, Math.floor(scrollFraction * frameCount));
     requestAnimationFrame(()=> updateImage(frameIndex < 0 ? 1 : frameIndex + 1));
 })
-
-// const preloadImages = ()=> {
-//     for (let i = 1; i < frameCount; i++) {
-//         const img = new Image();
-//         img.src = currentFrame(i);
-//     }
-// }
-// preloadImages();
